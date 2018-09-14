@@ -34,5 +34,9 @@
     "dataSource": "db",
     "public": true,
     "options": {}
+  },
+  "Administrador": {
+    "dataSource": "db",
+    "public": true
   }
 }

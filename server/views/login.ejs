@@ -18,7 +18,7 @@
 </section>
 
 <section>
-  <form action="/api/users" method="post">
+  <form action="/cadastro" method="post">
     <fieldset>
       <legend>Sign up form</legend>
       <div>
@@ -32,6 +32,13 @@
       <div>
         <label for="password">Password:</label>
         <input type="password" name="password" placeholder="Password"/>
+      </div>
+      <div>
+        <select name="tipo">
+          <option value="adm">Administrador</option>
+          <option value="emp">Empresa</option>
+          <option value="assessor">Assessor</option>
+        </select>
       </div>
       <div>
         <input type="submit" value="Sign up"/>

@@ -8,6 +8,7 @@ var path = require('path');
 
 module.exports = function(app) {
   var User = app.models.user;
+  var Administrador = app.models.administrador;
 
   //login page
   app.get('/', function(req, res) {
@@ -33,6 +34,41 @@ module.exports = function(app) {
           username: req.body.username,
           accessToken: token.id
         });
+    });
+  });
+
+  app.post('/cadastro', function(req, res) {
+    User.create({username: req.body.username, email: req.body.email, password: req.body.password, realm: req.body.tipo},
+      function(err, userInstance) {
+      console.log(req.body.tipo);
+      if (err) {
+        res.render('response', { //render view named 'response.ejs'
+          title: 'Sign up failed',
+          content: err,
+          redirectTo: '/',
+          redirectToLinkText: 'Try again'
+        });
+        return;
+      }
+    
+
+      if(req.body.tipo == 'adm') {
+        Administrador.create({username: req.body.username, email: req.body.email, password: req.body.password,
+                              realm: req.body.tipo, id: userInstance.id},
+                              function(err){
+                                if (err) {
+                                  res.render('response', { //render view named 'response.ejs'
+                                    title: 'Sign up failed',
+                                    content: err,
+                                    redirectTo: '/',
+                                    redirectToLinkText: 'Try again'
+                                  });
+                                  return;
+                                }
+                              }
+        )
+      }
+      res.render('login');
     });
   });
 
