@@ -1,49 +1,94 @@
-<section>
-  <form action="/login" method="post">
-    <fieldset>
-      <legend>Login form</legend>
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Username"/>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Password"/>
-      </div>
-      <div>
-        <input type="submit" value="Login"/>
-      </div>
-    </fieldset>
-  </form>
-</section>
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<section>
-  <form action="/cadastro" method="post">
-    <fieldset>
-      <legend>Sign up form</legend>
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" name="username" placeholder="Username"/>
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="text" name="email" placeholder="Email"/>
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" name="password" placeholder="Password"/>
-      </div>
-      <div>
-        <select name="tipo">
-          <option value="adm">Administrador</option>
-          <option value="emp">Empresa</option>
-          <option value="assessor">Assessor</option>
-        </select>
-      </div>
-      <div>
-        <input type="submit" value="Sign up"/>
-      </div>
-    </fieldset>
-  </form>
-</section>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Inova Metrópole</title>
+  </head>
+  <body>
+    
+    <!-- <section>
+      <form action="/login" method="post">
+        <fieldset>
+          <legend>Login form</legend>
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Username"/>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Password"/>
+          </div>
+          <div>
+            <input type="submit" value="Login"/>
+          </div>
+        </fieldset>
+      </form>
+    </section> -->
+
+
+    <div class="card text-center w-25 container">
+      <form class="" action="/login" method="post">
+        <img class="mb-4" src="" alt="img" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">Faça login</h1>
+        <label for="username" class="sr-only">Login</label>
+        <input type="text" name="username" class="form-control" placeholder="Seu login" required autofocus>
+        <label for="password" class="sr-only">Senha</label>
+        <input type="password" name="password" class="form-control" placeholder="Senha" required>
+        <div class="checkbox mb-3">
+          <label>
+            <input type="checkbox" value="remember-me"> Lembrar de mim
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2017-2018</p>
+      </form>
+    </div>
+    
+    <!-- <section>
+      <form action="/cadastro" method="post">
+        <fieldset>
+          <legend>Sign up form</legend>
+          <div>
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="Username"/>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="text" name="email" placeholder="Email"/>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Password"/>
+          </div>
+          <div>
+            <select name="tipo">
+              <option value="adm">Administrador</option>
+              <option value="emp">Empresa</option>
+              <option value="assessor">Assessor</option>
+            </select>
+          </div>
+          <div>
+            <input type="submit" value="Sign up"/>
+          </div>
+        </fieldset>
+      </form>
+    </section> -->
+
+
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  </body>
+</html>
+
 

@@ -5,6 +5,7 @@
 
 var dsConfig = require('../datasources.json');
 var path = require('path');
+const axios = require('axios');
 
 module.exports = function(app) {
   var User = app.models.user;
@@ -29,18 +30,36 @@ module.exports = function(app) {
           });
           return;
         }
-    
+
         res.render('home', { //login user and render 'home' view
           username: req.body.username,
           accessToken: token.id
         });
+
+
+        // app.models.user.findOne({
+        //   where: {
+        //     username: req.body.username
+        //   }}, function(err, user) {
+        //     if (err) return;
+        //     app.models.Administrador.findOne({
+        //       where: {
+        //         id: user.id
+        //       }}, function(err, adm) {
+        //         if (err) return;
+        //         res.render('home', { //login user and render 'home' view
+        //           username: req.body.username,
+        //           accessToken: token.id,
+        //           cargo: adm.cargo
+        //         });
+        //     })
+        // });
     });
   });
 
   app.post('/cadastro', function(req, res) {
     User.create({username: req.body.username, email: req.body.email, password: req.body.password, realm: req.body.tipo},
       function(err, userInstance) {
-      console.log(req.body.tipo);
       if (err) {
         res.render('response', { //render view named 'response.ejs'
           title: 'Sign up failed',
@@ -50,23 +69,51 @@ module.exports = function(app) {
         });
         return;
       }
+      const data = {
+        id: userInstance.id
+      }
     
 
       if(req.body.tipo == 'adm') {
-        Administrador.create({username: req.body.username, email: req.body.email, password: req.body.password,
-                              realm: req.body.tipo, id: userInstance.id},
-                              function(err){
-                                if (err) {
-                                  res.render('response', { //render view named 'response.ejs'
-                                    title: 'Sign up failed',
-                                    content: err,
-                                    redirectTo: '/',
-                                    redirectToLinkText: 'Try again'
-                                  });
-                                  return;
-                                }
-                              }
-        )
+        axios.post('http://localhost:3000/api/Administradores', data).then(function (response) {
+        })
+        .catch(function (error) {
+          res.render('response', { //render view named 'response.ejs'
+          title: 'Sign up failed',
+          content: error,
+          redirectTo: '/',
+          redirectToLinkText: 'Try again'
+        });
+        return;
+        });
+      }
+
+      else if(req.body.tipo == 'assessor'){
+        axios.post('http://localhost:3000/api/Assessores', data).then(function (response) {
+        })
+        .catch(function (error) {
+          res.render('response', { //render view named 'response.ejs'
+          title: 'Sign up failed',
+          content: error,
+          redirectTo: '/',
+          redirectToLinkText: 'Try again'
+        });
+        return;
+        });
+      }
+
+      else if(req.body.tipo == 'emp'){
+        axios.post('http://localhost:3000/api/Empresas', data).then(function (response) {
+        })
+        .catch(function (error) {
+          res.render('response', { //render view named 'response.ejs'
+          title: 'Sign up failed',
+          content: error,
+          redirectTo: '/',
+          redirectToLinkText: 'Try again'
+        });
+        return;
+        });
       }
       res.render('login');
     });

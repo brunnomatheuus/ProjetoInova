@@ -1,16 +1,15 @@
 {
-  "name": "Administrador",
-  "plural": "Administradores",
+  "name": "empresa",
+  "plural": "Empresas",
   "base": "PersistedModel",
   "idInjection": false,
+  "forceId": false,
   "options": {
     "validateUpsert": true
   },
-  "forceId": false,
   "properties": {
-    "cargo": {
-      "type": "string",
-      "required": false
+    "nome": {
+      "type": "string"
     }
   },
   "validations": [],

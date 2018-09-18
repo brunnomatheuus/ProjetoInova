@@ -38,5 +38,13 @@
   "Administrador": {
     "dataSource": "db",
     "public": true
+  },
+  "assessor": {
+    "dataSource": "db",
+    "public": true
+  },
+  "empresa": {
+    "dataSource": "db",
+    "public": true
   }
 }

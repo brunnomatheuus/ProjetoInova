@@ -1,6 +1,6 @@
 {
-  "name": "Administrador",
-  "plural": "Administradores",
+  "name": "assessor",
+  "plural": "Assessores",
   "base": "PersistedModel",
   "idInjection": false,
   "options": {
