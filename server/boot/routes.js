@@ -17,7 +17,7 @@ module.exports = function(app) {
   });
 
   //log a user in
-  app.post('/login', function(req, res) {
+  app.post('/home', function(req, res) {
 
     User.login({username: req.body.username, password: req.body.password}, 'user', 
       function (err, token) {
