@@ -3,18 +3,18 @@
 // This file is licensed under the MIT License.
 // License text available at https://opensource.org/licenses/MIT
 
-var dsConfig = require('../datasources.json');
-var path = require('path');
+/*var dsConfig = require('../datasources.json');
+var path = require('path');*/
 const axios = require('axios');
 
 module.exports = function(app) {
   var User = app.models.user;
-  var Administrador = app.models.administrador;
 
   //login page
   app.get('/', function(req, res) {
     res.render('login');
   });
+
 
   //log a user in
   app.post('/home', function(req, res) {
@@ -31,29 +31,60 @@ module.exports = function(app) {
           return;
         }
 
-        res.render('home', { //login user and render 'home' view
+        /*res.render('home', { //login user and render 'home' view
           username: req.body.username,
           accessToken: token.id
+        });*/
+
+
+        app.models.user.findOne({
+          where: {
+            username: req.body.username
+          }}, function(err, user) {
+            if (err) return;
+            if(user.realm == 'adm'){
+              app.models.Administrador.findOne({
+                where: {
+                  id: user.id
+                }}, function(err, adm) {
+                  if (err) return;
+                  res.render('homeAdm', { //login user and render 'home' view
+                    username: req.body.username,
+                    accessToken: token.id,
+                    cargo: adm.cargo
+                  });
+              })
+            }
+            else if(user.realm == 'emp'){
+              app.models.empresa.findOne({
+                where: {
+                  id: user.id
+                }}, function(err, emp) {
+                  if (err) return;
+                  res.render('homeEmpresa', { //login user and render 'home' view
+                    username: req.body.username,
+                    accessToken: token.id,
+                    nome: emp.nome
+                  });
+              })
+            }
+            else if(user.realm == 'assessor'){
+              app.models.assessor.findOne({
+                where: {
+                  id: user.id
+                }}, function(err, assessor) {
+                  if (err) return;
+                  res.render('homeAssessor', { //login user and render 'home' view
+                    username: req.body.username,
+                    accessToken: token.id,
+                    cargo: assessor.cargo
+                  });
+              })
+            }
         });
 
 
-        // app.models.user.findOne({
-        //   where: {
-        //     username: req.body.username
-        //   }}, function(err, user) {
-        //     if (err) return;
-        //     app.models.Administrador.findOne({
-        //       where: {
-        //         id: user.id
-        //       }}, function(err, adm) {
-        //         if (err) return;
-        //         res.render('home', { //login user and render 'home' view
-        //           username: req.body.username,
-        //           accessToken: token.id,
-        //           cargo: adm.cargo
-        //         });
-        //     })
-        // });
+        
     });
   });
 

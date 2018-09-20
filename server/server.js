@@ -10,9 +10,12 @@ var bodyParser = require('body-parser');
 
 var app = module.exports = loopback();
 
+
 // configure view handler
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+app.use(loopback.static(path.join(__dirname, '../public/images')));
 
 // configure body parser
 app.use(bodyParser.urlencoded({extended: true}));
