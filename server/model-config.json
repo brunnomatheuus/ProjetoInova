@@ -30,20 +30,23 @@
   "Email": {
     "dataSource": "db"
   },
-  "user": {
-    "dataSource": "db",
-    "public": true,
-    "options": {}
-  },
-  "Administrador": {
+  "pessoa": {
     "dataSource": "db",
     "public": true
   },
-  "assessor": {
+  "edital": {
+    "dataSource": "db",
+    "public": true
+  },
+  "contato": {
     "dataSource": "db",
     "public": true
   },
   "empresa": {
+    "dataSource": "db",
+    "public": true
+  },
+  "funcionario": {
     "dataSource": "db",
     "public": true
   }

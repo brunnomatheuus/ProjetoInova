@@ -1,0 +1,29 @@
+{
+  "name": "contato",
+  "plural": "contatos",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "ddd": {
+      "type": "number",
+      "required": true
+    },
+    "telefone": {
+      "type": "number",
+      "required": true
+    },
+    "email": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

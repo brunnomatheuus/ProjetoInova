@@ -1,19 +1,74 @@
 {
   "name": "empresa",
-  "plural": "Empresas",
+  "plural": "empresas",
   "base": "PersistedModel",
-  "idInjection": false,
-  "forceId": false,
+  "idInjection": true,
   "options": {
     "validateUpsert": true
   },
   "properties": {
-    "nome": {
-      "type": "string"
+    "dataIngresso": {
+      "type": "date",
+      "required": true
+    },
+    "matricula": {
+      "type": "string",
+      "required": true
+    },
+    "tipo": {
+      "type": "string",
+      "required": true
+    },
+    "preInc": {
+      "type": {
+        "descricao": {
+          "type": "string",
+          "required": true
+        },
+        "nomeProjeto": {
+          "type": "string",
+          "required": true
+        }
+      }
+    },
+    "Inc": {
+      "type": {
+        "produto": {
+          "type": "string",
+          "required": true
+        },
+        "razaoSocial": {
+          "type": "string",
+          "required": true
+        },
+        "cnpj": {
+          "type": "number",
+          "required": true
+        },
+        "areaAtuacao": {
+          "type": "string",
+          "required": true
+        },
+        "representanteLegal": {
+          "type": "string",
+          "required": true
+        },
+        "porte": {
+          "type": "string",
+          "required": true
+        }
+      }
     }
   },
   "validations": [],
-  "relations": {},
+  //APAGAR ESSA RELAÇÃO DEPOIS!
+  "relations": {
+    "editalEmpresa": {
+      "type": "hasOne",
+      "model": "edital",
+      "foreignKey": "numeroEdital"
+    }
+  },
   "acls": [],
   "methods": {}
 }
