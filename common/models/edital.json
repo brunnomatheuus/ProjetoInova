@@ -25,7 +25,14 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "editalEmpresa": {
+      "type": "hasMany",
+      "model": "empresa",
+      "foreignKey": "idEdital",
+      "primaryKey": "id"
+    }
+  },
   "acls": [],
   "methods": {}
 }

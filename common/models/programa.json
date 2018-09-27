@@ -1,6 +1,6 @@
 {
-  "name": "empresa",
-  "plural": "empresas",
+  "name": "programa",
+  "plural": "programas",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -11,16 +11,24 @@
       "type": "date",
       "required": true
     },
-    "matricula": {
+    "idEdital": {
       "type": "string",
       "required": true
     },
-    "tipo": {
-      "type": "string",
-      "required": true
+    "acelera": {
+      "type": {
+        "matricula": {
+          "type": "string",
+          "required": true
+        }
+      }
     },
     "preInc": {
       "type": {
+        "matricula": {
+          "type": "string",
+          "required": true
+        },
         "descricao": {
           "type": "string",
           "required": true
@@ -33,6 +41,14 @@
     },
     "Inc": {
       "type": {
+        "matricula": {
+          "type": "string",
+          "required": true
+        },
+        "nomeEmpresa": {
+          "type": "string",
+          "required": true
+        },
         "produto": {
           "type": "string",
           "required": true
@@ -61,12 +77,21 @@
     }
   },
   "validations": [],
-  //APAGAR ESSA RELAÇÃO DEPOIS!
   "relations": {
-    "editalEmpresa": {
-      "type": "hasOne",
-      "model": "edital",
-      "foreignKey": "numeroEdital"
+    "participantes": {
+      "type": "hasMany",
+      "model": "pessoa",
+      "foreignKey": "idEmpresa",
+      "primaryKey": "id"
+    },
+    "contatoEmpresa": {
+      "type": "embedsOne",
+      "model": "contato",
+      "property": "contatoEmpresarial",
+      "options": {
+        "validate": true,
+        "forceId": false
+      }
     }
   },
   "acls": [],

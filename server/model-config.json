@@ -42,11 +42,7 @@
     "dataSource": "db",
     "public": true
   },
-  "empresa": {
-    "dataSource": "db",
-    "public": true
-  },
-  "funcionario": {
+  "programa": {
     "dataSource": "db",
     "public": true
   }

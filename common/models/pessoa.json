@@ -49,15 +49,17 @@
     "endereco": {
       "type": "string",
       "required": true
+    },
+    "tipo": {
+      "type": "string",
+      "required": true
+    },
+    "idEmpresa": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "pessoaFunc": {
-      "type": "hasOne",
-      "model": "funcionario",
-      "polymorphic": "funcionarioPessoa"
-    },
     "contato": {
       "type": "embedsOne",
       "model": "contato",
