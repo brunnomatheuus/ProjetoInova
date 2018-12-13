@@ -1,10 +1,11 @@
 {
   "name": "pessoa",
   "plural": "pessoas",
-  "base": "User",
+  "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
     "nome": {
@@ -12,43 +13,34 @@
       "required": true
     },
     "cpf": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "rg": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "orgaoEmissor": {
       "type": "string"
     },
     "dataNascimento": {
-      "type": "date",
-      "required": true
+      "type": "string"
     },
     "escolaridade": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "curso": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "estadoCivil": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "naturalidade": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "profissao": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "endereco": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "tipo": {
       "type": "string",
@@ -66,11 +58,10 @@
       "property": "contatoPessoal",
       "options": {
         "validate": true,
-        "forceId": false
+        "forceId": true
       }
     }
   },
-  "acls": [
-  ],
+  "acls": [],
   "methods": {}
 }

@@ -4,15 +4,12 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
-    "ddd": {
-      "type": "number",
-      "required": true
-    },
     "telefone": {
-      "type": "number",
+      "type": "string",
       "required": true
     },
     "email": {

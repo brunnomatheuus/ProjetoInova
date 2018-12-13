@@ -1,6 +1,6 @@
 {
-  "name": "edital",
-  "plural": "editais",
+  "name": "objetivoOKR",
+  "plural": "objetivosOKR",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
@@ -8,29 +8,34 @@
     "strictObjectIDCoercion": true
   },
   "properties": {
-    "prazo": {
+    "nome": {
       "type": "string",
       "required": true
     },
-    "tipoEdital": {
+    "porcentagem": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "tipo": {
       "type": "string",
       "required": true
     },
-    "numeroEdital": {
-      "type": "number",
-      "required": true
+    "ano": {
+      "type": "string",
+      "required": true,
+      "default": "2018"
     },
-    "valores": {
-      "type": "number",
-      "required": true
+    "periodo": {
+      "type": "string"
     }
   },
   "validations": [],
   "relations": {
-    "editalEmpresa": {
+    "chaves": {
       "type": "hasMany",
-      "model": "empresa",
-      "foreignKey": "idEdital",
+      "model": "resultadoChaveOKR",
+      "foreignKey": "idObjetivo",
       "primaryKey": "id"
     }
   },

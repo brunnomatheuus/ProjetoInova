@@ -22,87 +22,12 @@
     </style>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#" style="height:20pt"><img class="mb-4" src="LOGO_Inova-04.png" alt="LOGO" height="20"></a>
-        
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item ml-1">
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn text-white" href="#" id="dropdownGru" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      GRU
-                    </a>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownGru">
-                      <a class="dropdown-item text-white" href="#">Gerar GRU</a>
-                      <a class="dropdown-item text-white" href="#">Ver GRUs</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="nav-item ml-1">
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn text-white" href="#" id="dropdownCadastro" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Cadastro
-                    </a>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownCadastro">
-                      <a class="dropdown-item text-white" href="#">Edital</a>
-                      <a class="dropdown-item text-white" href="#">Assessor</a>
-                      <a class="dropdown-item text-white" href="#">Acelera Inova</a>
-                      <a class="dropdown-item text-white" href="#">Empresa Pré-Incubada</a>
-                      <a class="dropdown-item text-white" href="#">Empresa Incubada</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li class="nav-item ml-1">
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle btn text-white" href="#" id="dropdownVisualizar" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Visualizar
-                    </a>
-                    <div class="dropdown-menu bg-dark" aria-labelledby="dropdownVisualizar">
-                      <a class="dropdown-item text-white" href="#">Editais</a>
-                      <a class="dropdown-item text-white" href="#">Assessores</a>
-                      <a class="dropdown-item text-white" href="#">Acelerados</a>
-                      <a class="dropdown-item text-white" href="#">Empresas Pré-Incubada</a>
-                      <a class="dropdown-item text-white" href="#">Empresas Incubada</a>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="float-right" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-white" href="/logout?access_token=<%= accessToken %>">Sair</a>
-            </li>
-          </ul>
-        </div>
-
-      </nav>
-    </header>
+    <%- include header.ejs %>
 
     <div>
       <p class="text-danger">Hi <%= username %>.</p>
       <p>Your accessToken is: <%= accessToken %></p>
-      <p>Seu cargo é: <%= cargo %></p>
       <br/>
       <br/>
       <a href="/logout?access_token=<%= accessToken %>">Log out</a>

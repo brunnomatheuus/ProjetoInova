@@ -1,0 +1,31 @@
+{
+  "name": "usuario",
+  "plural": "usuarios",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "tipo": {
+      "type": "string",
+      "required": true
+    },
+    "idPessoa": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "pessoaUser": {
+      "type": "hasOne",
+      "model": "pessoa",
+      "foreignKey": "id",
+      "primaryKey": "idPessoa"
+    }
+  },
+  "acls": [],
+  "methods": {}
+}

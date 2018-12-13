@@ -4,14 +4,27 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
   },
   "properties": {
     "dataIngresso": {
-      "type": "date",
+      "type": "string",
       "required": true
     },
     "idEdital": {
+      "type": "string",
+      "required": true
+    },
+    "tipoPrograma": {
+      "type": "string",
+      "required": true
+    },
+    "nome": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
       "type": "string",
       "required": true
     },
@@ -32,20 +45,12 @@
         "descricao": {
           "type": "string",
           "required": true
-        },
-        "nomeProjeto": {
-          "type": "string",
-          "required": true
         }
       }
     },
     "Inc": {
       "type": {
         "matricula": {
-          "type": "string",
-          "required": true
-        },
-        "nomeEmpresa": {
           "type": "string",
           "required": true
         },
@@ -58,7 +63,7 @@
           "required": true
         },
         "cnpj": {
-          "type": "number",
+          "type": "string",
           "required": true
         },
         "areaAtuacao": {
@@ -90,7 +95,7 @@
       "property": "contatoEmpresarial",
       "options": {
         "validate": true,
-        "forceId": false
+        "forceId": true
       }
     }
   },

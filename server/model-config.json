@@ -25,14 +25,10 @@
   },
   "Role": {
     "dataSource": "db",
-    "public": true
+    "public": false
   },
   "Email": {
     "dataSource": "db"
-  },
-  "pessoa": {
-    "dataSource": "db",
-    "public": true
   },
   "edital": {
     "dataSource": "db",
@@ -43,6 +39,26 @@
     "public": true
   },
   "programa": {
+    "dataSource": "db",
+    "public": true
+  },
+  "pessoa": {
+    "dataSource": "db",
+    "public": true
+  },
+  "usuario": {
+    "dataSource": "db",
+    "public": true
+  },
+  "objetivoOKR": {
+    "dataSource": "db",
+    "public": true
+  },
+  "resultadoChaveOKR": {
+    "dataSource": "db",
+    "public": true
+  },
+  "atualizacaoOKR": {
     "dataSource": "db",
     "public": true
   }

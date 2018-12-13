@@ -1,0 +1,36 @@
+{
+  "name": "atualizacaoOKR",
+  "plural": "atualizacoesOKR",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true,
+    "strictObjectIDCoercion": true
+  },
+  "properties": {
+    "porcentagem": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "data": {
+      "type": "string",
+      "required": true
+    },
+    "observacoes": {
+      "type": "string"
+    },
+    "responsavel": {
+      "type": "string",
+      "required": true
+    },
+    "idChave": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
